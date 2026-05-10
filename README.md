@@ -3,6 +3,9 @@
 Juego diario al estilo Wordle pero con equipos de fútbol europeos y sudamericanos.
 Sitio **100% estático**: HTML + CSS + JS plano. No hay build, ni backend, ni dependencias.
 
+Link:
+https://Ismaelhtml.github.io/futboldle/
+
 ## Estructura
 
 ```
