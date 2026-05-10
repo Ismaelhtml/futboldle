@@ -44,34 +44,6 @@ cerrar la pestaña y volver más tarde.
 Esto significa que con N=20 equipos hay 20 días seguidos sin repetición, y
 después una nueva permutación.
 
-## Cómo publicarla
-
-Cualquier hosting estático sirve. La carpeta a subir es **`futboldle/` entera**.
-
-### Opción 1 — Netlify (drag & drop)
-1. Entra en https://app.netlify.com/drop
-2. Arrastra la carpeta `futboldle/`.
-3. Listo: te da una URL pública.
-
-### Opción 2 — Vercel
-```bash
-cd futboldle
-npx vercel deploy --prod
-```
-
-### Opción 3 — GitHub Pages
-1. Sube esta carpeta a un repositorio (puede ser la raíz del repo o una subcarpeta).
-2. En **Settings → Pages**, elige la rama (`main`) y la carpeta (`/futboldle` o `/`).
-3. Espera 1-2 min y abre la URL `https://<usuario>.github.io/<repo>/`.
-
-### Opción 4 — Servidor propio
-Sirve el contenido con cualquier servidor estático. Ejemplo rápido:
-```bash
-cd futboldle
-python -m http.server 8080
-# abre http://localhost:8080
-```
-
 ## Cómo añadir o editar equipos
 
 Edita [`data/teams.js`](data/teams.js). Cada equipo tiene:
