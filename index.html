@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futboldle — Adivina el equipo de fútbol del día</title>
+  <meta name="description" content="Adivina el equipo de fútbol del día. Un juego diario al estilo Wordle con clubes de LaLiga, Premier League, Serie A, Bundesliga y Ligue 1." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚽</span>
+      <h1>Futboldle</h1>
+    </div>
+    <button id="howtoBtn" class="ghost-btn" type="button">¿Cómo se juega?</button>
+  </header>
+
+  <main class="container">
+    <section id="leagueSelect" class="card league-card">
+      <h2>Elige una liga</h2>
+      <p class="muted">Cada liga tiene su propio equipo del día. Juega en una liga concreta o usa <strong>Todas las ligas</strong> para mezclar Europa y Sudamérica.</p>
+      <div id="leagueGrid" class="league-sections"></div>
+    </section>
+
+    <section id="game" class="card game-card hidden">
+      <div class="game-header">
+        <button id="backBtn" class="ghost-btn" type="button">← Cambiar liga</button>
+        <div class="game-info">
+          <span id="leagueLabel" class="pill"></span>
+          <span id="dateLabel" class="pill subtle"></span>
+        </div>
+      </div>
+
+      <h2 id="gameTitle">Adivina el equipo del día</h2>
+      <p class="muted">Empieza a escribir el nombre de un equipo. Las casillas se pondrán <span class="dot good"></span> verdes si aciertas el atributo, <span class="dot close"></span> amarillas si estás cerca (mismo país, año cercano, color en común…), o <span class="dot bad"></span> rojas si fallas. Una <strong>X</strong> en una columna de copa significa que el equipo no la ha ganado nunca.</p>
+
+      <div class="search-wrap">
+        <input id="guessInput" type="text" autocomplete="off" placeholder="Escribe un equipo…" />
+        <ul id="suggestions" class="suggestions hidden"></ul>
+      </div>
+
+      <div class="counters">
+        <span id="attemptCount">Intentos: 0</span>
+        <button id="resetBtn" class="link-btn" type="button">Reiniciar partida</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="guessTable" class="guess-table">
+          <thead>
+            <tr id="headerRow"></tr>
+          </thead>
+          <tbody id="guessBody"></tbody>
+        </table>
+      </div>
+
+      <div id="winBanner" class="banner hidden">
+        <h3>¡Has acertado! 🎉</h3>
+        <p id="winText"></p>
+        <p class="muted">Vuelve mañana para un nuevo equipo.</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="howtoModal" class="modal">
+    <h3>Cómo jugar</h3>
+    <ul>
+      <li>Cada día, en cada liga, hay <strong>un equipo secreto distinto</strong>.</li>
+      <li>Escribe el nombre de un equipo y pulsa Enter o haz clic en una sugerencia.</li>
+      <li>Cada columna te dirá si has acertado ese atributo:
+        <ul>
+          <li><span class="dot good"></span> verde: coincidencia exacta.</li>
+          <li><span class="dot close"></span> amarillo: cerca (mismo país, año cercano, color en común…).</li>
+          <li><span class="dot bad"></span> rojo: muy lejos.</li>
+        </ul>
+      </li>
+      <li>En valores numéricos verás ▲ si el equipo secreto tiene un valor mayor, ▼ si es menor.</li>
+      <li>En las columnas de copas continentales, una <strong>X</strong> significa "ninguna ganada".</li>
+      <li>Para equipos de Europa: <em>Champions</em> y <em>Europa League</em>. Para los de Sudamérica: <em>Libertadores</em> y <em>Sudamericana</em>.</li>
+      <li>No hay límite de intentos: piensa con calma.</li>
+    </ul>
+    <form method="dialog">
+      <button class="primary-btn" type="submit">Entendido</button>
+    </form>
+  </dialog>
+
+  <footer class="foot">
+    <p>Hecho con ⚽ — datos aproximados. Inspirado en juegos diarios tipo Wordle.</p>
+  </footer>
+
+  <script src="data/teams.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
