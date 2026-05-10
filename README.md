@@ -1,6 +1,6 @@
 # Futboldle ⚽
 
-Juego diario al estilo Wordle / onepiecedle.net pero con equipos de fútbol europeos.
+Juego diario al estilo Wordle pero con equipos de fútbol europeos y sudamericanos.
 Sitio **100% estático**: HTML + CSS + JS plano. No hay build, ni backend, ni dependencias.
 
 ## Estructura
@@ -105,6 +105,6 @@ Para cambiar las tolerancias de los atributos numéricos (cuándo se considera
 
 ## Notas legales
 
-- Los nombres y datos de los equipos son aproximados. No incluye escudos ni
+- Los nombres y datos de los equipos son lo recopilados de la web a día 9/5/2026 formato DD/MM/AA. No incluye escudos ni
   imágenes de marca.
 - Pensado como proyecto educativo / fan, no oficial.
